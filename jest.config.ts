@@ -5,7 +5,16 @@ const baseDir = __dirname
 
 module.exports = {
   clearMocks: true,
-  collectCoverageFrom: ['**/!(*.d)*.ts', '**/!(*.d)*.tsx', '!index.tsx'],
+  collectCoverageFrom: [
+    '**/!(*.d)*.ts',
+    '**/!(*.d)*.tsx',
+    '!src/index.tsx',
+    '!server/index.ts',
+    '!jest.config.ts',
+    '!src/stoybook_exemple/stories/Button.stories.tsx',
+    '!src/stoybook_exemple/stories/Button.tsx',
+    '!src/tests-utils/',
+  ],
   coverageDirectory: resolve(baseDir, 'built', 'coverage'),
   coverageReporters: ['text', 'html'],
   coverageThreshold: {
