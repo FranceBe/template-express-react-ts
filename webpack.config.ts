@@ -86,7 +86,7 @@ export const config: Configuration = {
   ],
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
-    modules: ['src', 'node_modules'],
+    modules: ['src', 'node_modules', 'jest-config'],
   },
 }
 

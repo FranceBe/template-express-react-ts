@@ -1,0 +1,7 @@
+{
+  "extends": "./tsconfig.json",
+  "include": ["src/stoybook_exemple/stories",
+    "webpack.config.ts",
+    "src/tests-utils/coverage-threshold.json"
+  ]
+}

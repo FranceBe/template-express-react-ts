@@ -1,7 +1,8 @@
 import express, { Express, Request, Response, static as staticFactory } from 'express'
-import { Server } from 'http'
+import { Server as httpServer } from 'http'
 import { join, resolve } from 'path'
 
+import { Serverable } from '../types/server'
 import { config as webpackConfig } from '../webpack.config'
 
 const frontSrcBasedir = resolve(__dirname, '..', 'built', 'src')
@@ -10,11 +11,10 @@ const staticMw = staticFactory(frontSrcBasedir)
 const cors = require('cors')
 const bodyParser = require('body-parser')
 const chalk = require('chalk')
-
-export class MainServer {
-  private app: Express
-  private readonly port: number | string
-  private server: Server | undefined
+export class Server implements Serverable {
+  public app: Express
+  public readonly port: number | string
+  public server: httpServer | undefined
 
   constructor({ port }: { port: number | string }) {
     this.app = express()

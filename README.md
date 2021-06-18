@@ -18,7 +18,9 @@ this variable is set to `development`. This script will start the express app th
 
 ### Test
 
-[TODO]
+- `test` : run tests for backend and frontend
+- `test:update`: run tests for backend and frontend and update snapshots
+- `cover`: run tests and check coverage thresholds
 
 ### Lint & prettier
 
